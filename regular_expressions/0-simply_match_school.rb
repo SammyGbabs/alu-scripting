@@ -1,2 +1,4 @@
 #!/usr/bin/env ruby
-/School/
+#This code matches "Holberton"
+
+puts ARGV[0].scan(/Holberton/).join
