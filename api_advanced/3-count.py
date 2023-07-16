@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-"""Javascript should count as javascript, but java should not)."""
+"""
+Javascript should count as javascript, but java should not).
+"""
 import json
 import requests
 
