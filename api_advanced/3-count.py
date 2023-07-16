@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""""Doc"""
+"""Doc"""
 import requests
 
 
@@ -57,4 +57,4 @@ def count_words(subreddit, word_list, after="", words_count={}):
 
         for i in range(len(words_count)):
             print("{}: {}".format(words_count[i][0],
-                                  words_count[i][1])
+                                  words_count[i][1]))
