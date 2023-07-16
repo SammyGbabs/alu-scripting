@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Javascript should count as javascript, but java should not).
+3-counts.py; Theses is used in testing this documentation(Javascript should count as javascript, but java should not).
 """
 import json
 import requests
