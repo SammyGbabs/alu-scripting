@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-""""Counts all the data using loops"""
+""""3-count.py"""
 import requests
 
 
 def count_words(subreddit, word_list, after="", words_count={}):
-    """"Module will count with loops"""
+    """"count words"""
     url = "https://www.reddit.com/r/{}/hot.json?limit=100" \
         .format(subreddit)
     header = {'User-Agent': 'Mozilla/5.0'}
@@ -25,8 +25,9 @@ def count_words(subreddit, word_list, after="", words_count={}):
 
     hot_articles = json_res.get('data').get('children')
     [hot_titles.append(article.get('data').get('title'))
-    for article in hot_articles]
+     for article in hot_articles]
 
+    # loop through all titles
     for i in range(len(hot_titles)):
         for title_word in hot_titles[i].lower().split():
             for word in words:
@@ -36,6 +37,7 @@ def count_words(subreddit, word_list, after="", words_count={}):
     if has_next:
         return count_words(subreddit, word_list, after, words_count)
     else:
+
         words_count = dict(filter(lambda item: item[1] != 0,
                                   words_count.items()))
 
