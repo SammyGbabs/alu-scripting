@@ -37,7 +37,7 @@ def count_words(subreddit, word_list, after='', hot_list=[]):
             for i in range(len(word_list)):
                 for j in range(i, len(word_list)):
                     if (hot_list[j] > hot_list[i] or
-                            (word_list[i].lower() > word_list[j].lower() and
+                            (word_list[i] > word_list[j] and
                              hot_list[j] == hot_list[i])):
                         a = hot_list[i]
                         hot_list[i] = hot_list[j]
@@ -45,13 +45,9 @@ def count_words(subreddit, word_list, after='', hot_list=[]):
                         a = word_list[i]
                         word_list[i] = word_list[j]
                         word_list[j] = a
-            
-            word_hot_list = list(zip(word_list, hot_list))
-            word_hot_list.sorted(key-lambda x: (-x[1], x[0].lower()))
 
-
-            for word, hot_count in word_hot_list:
-                if (hot_count > 0) and word not in save:
-                    print("{}: {}".format(word.lower(), hot_count))
+            for i in range(len(word_list)):
+                if (hot_list[i] > 0) and i not in save:
+                    print("{}: {}".format(word_list[i].lower(), hot_list[i]))
         else:
             count_words(subreddit, word_list, after, hot_list)
