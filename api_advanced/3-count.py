@@ -37,7 +37,7 @@ def count_words(subreddit, word_list, after='', hot_list=[]):
             for i in range(len(word_list)):
                 for j in range(i, len(word_list)):
                     if (hot_list[j] > hot_list[i] or
-                            (word_list[i] > word_list[j] and
+                            (word_list[i].lower() > word_list[j].lower() and
                              hot_list[j] == hot_list[i])):
                         a = hot_list[i]
                         hot_list[i] = hot_list[j]
